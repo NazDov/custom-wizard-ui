@@ -13,5 +13,11 @@ export class StepBarComponent {
 
   @Input()
   steps?: WizardStep[];
+  @Input()
+  activeStep?: number;
+
+  getSteps(): WizardStep[] | any {
+    return this?.steps;
+  }
 
 }

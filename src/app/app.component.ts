@@ -32,11 +32,6 @@ export class AppComponent {
         id: 3,
         label: "3",
         content: "Step 3"
-      },
-      {
-        id: 4,
-        label: "4",
-        content: "Step 4"
       }
     ]
   }

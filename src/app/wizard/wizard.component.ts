@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WizardProperties } from './wizard-properties.model';
+import { WizardProperties, WizardStep } from './wizard-properties.model';
 import { StepBarComponent } from './step-bar/step-bar.component';
 import { StepContentComponent } from './step-content/step-content.component';
 import { StepNavigationComponent } from './step-navigation/step-navigation.component';
@@ -12,9 +12,16 @@ import { StepNavigationComponent } from './step-navigation/step-navigation.compo
   templateUrl: './wizard.component.html',
   styleUrl: './wizard.component.scss'
 })
-export class WizardComponent {
+export class WizardComponent implements OnInit {
 
   @Input()
   properties?: WizardProperties;
+  activeStep?: WizardStep;
+  content!: string;
+
+
+  ngOnInit(): void {
+    this.content = "Step 1";
+  }
 
 }

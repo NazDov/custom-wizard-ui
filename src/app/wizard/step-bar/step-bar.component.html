@@ -1,16 +1,11 @@
-<div class="container">
+<div class="container-fluid">
     <div class="stepbar">
-        <div class="stepbar-row">
-            <div class="stepbar-step col-xs-3"> 
-                <div type="button" class="btn btn-success btn-circle">
-                    1
-                </div>
-                <div type="button" class="btn btn-outline-success btn-success btn-circle" disabled>
-                    2
-                </div>
-                <div type="button" class="btn btn-outline-success btn-success btn-circle" disabled>
-                    3
-                </div>
+        <div class="stepbar-row setup-panel">
+            <div *ngFor="let step of steps; trackBy: getSteps" class="stepbar-step col-xs-3"> 
+                <div type="button" [ngClass]="activeStep === step.id ? 'btn-success' : 'btn-outline-success' " 
+                  class="btn btn-circle" [attr.disabled]="activeStep != step.id">
+                    {{step.label}}
+            </div>
         </div>
     </div>
 </div>

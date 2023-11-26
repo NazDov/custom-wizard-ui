@@ -1,0 +1,62 @@
+.stepbar-step {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 10%;
+}
+
+.stepbar-row {
+    display: block;
+    width: 100%;
+}
+
+.stepbar {
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+
+.stepbar::before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content:" ";
+    width: 100%;
+    height: 1px;
+    background-color: #36C9A7;
+    z-index: 0;
+}
+
+
+.btn {
+    border-width: 2px;
+    --bs-btn-hover-color: #fff;
+    color: #36C9A7;
+
+    
+}
+
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+
+.btn-success {
+    --bs-btn-border-color: #36C9A7;
+    --bs-btn-bg: #36C9A7;
+    color: white;
+
+    &:hover {
+        --bs-btn-hover-bg: #36C9A7;
+        --bs-btn-hover-border-color: #36C9A7
+    }
+}

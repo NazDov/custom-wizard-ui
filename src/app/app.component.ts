@@ -18,13 +18,11 @@ export class AppComponent {
     steps: [
       {
         label: "1",
-        content: "Step 1",
-        next: 2,
+        content: "Step 1"
       },
       {
         label: "2",
         content: "Step 2",
-        next: 3
       },
       {
         label: "3",
@@ -32,7 +30,7 @@ export class AppComponent {
       },
       {
         label: "4",
-        content: "Step 3"
+        content: "Step 4"
       }
     ]
   }

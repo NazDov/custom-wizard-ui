@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WizardStep } from '../wizard-properties.model';
 
@@ -21,8 +21,14 @@ export class StepNavigationComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.activeStep = this.steps? this.steps[0] : undefined;
-    this.totalSteps = this.steps!.length | 0;
+    if (!this.steps) {
+      throw Error("app-step-navigation [steps] property not provided");
+    }
+
+    this.activeStep = this.steps[0];
+    this.totalSteps = this.steps.length;
+    this.backBtnDisabled = true;
+
     if (this.activeStep) {
       this.onActiveStepChange.emit(this.activeStep);
     }
@@ -33,11 +39,18 @@ export class StepNavigationComponent implements OnInit {
     this.backBtnDisabled = false;
 
     if (this.activeStep) {
-      const activeStepIndex = this.steps!.indexOf(this.activeStep);
+      let activeStepIndex = this.steps!.indexOf(this.activeStep);
 
       if (activeStepIndex + 1 < this.totalSteps) {
         this.activeStep = this.steps?.at(activeStepIndex + 1);
         this.onActiveStepChange.emit(this.activeStep);
+
+        activeStepIndex = this.steps!.indexOf(this.activeStep!);
+
+        if (activeStepIndex == this.totalSteps - 1) {
+           this.nextBtnDisabled = true;
+        }
+
       } else {
 
         this.nextBtnDisabled = true;
@@ -51,11 +64,18 @@ export class StepNavigationComponent implements OnInit {
 
     if (this.activeStep) {
 
-      const activeStepIndex = this.steps!.indexOf(this.activeStep);
+      let activeStepIndex = this.steps!.indexOf(this.activeStep);
 
       if (activeStepIndex > 0) {
         this.activeStep = this.steps?.at(activeStepIndex - 1);
         this.onActiveStepChange.emit(this.activeStep);
+
+        activeStepIndex = this.steps!.indexOf(this.activeStep!);
+
+        if (activeStepIndex == 0) {
+           this.backBtnDisabled = true;
+        }
+
       } else {
 
         this.backBtnDisabled = true;

@@ -13,15 +13,17 @@ import { StepNavigationComponent } from './step-navigation/step-navigation.compo
   styleUrl: './wizard.component.scss'
 })
 export class WizardComponent implements OnInit {
-
+ 
   @Input()
   properties?: WizardProperties;
   activeStep?: WizardStep;
-  content!: string;
 
 
-  ngOnInit(): void {
-    this.content = "Step 1";
+  public ngOnInit(): void {
+  
   }
 
+  public onActiveStepChange($event: WizardStep) {
+    this.activeStep = $event;
+  }
 }

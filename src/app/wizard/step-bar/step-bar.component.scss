@@ -36,46 +36,6 @@
     }
 }
 
-
-
-.btn {
-    border-width: 2px;
-    --bs-btn-hover-color: #fff;
-    color: #36C9A7;
-
-    &-circle {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        line-height: 1.428571429;
-        border-radius: 15px;
-    }
-
-
-    &-success {
-        --bs-btn-border-color: #36C9A7;
-        --bs-btn-bg: #36C9A7;
-        color: white;
-
-        &:hover {
-            --bs-btn-hover-bg: #36C9A7;
-            --bs-btn-hover-border-color: #36C9A7
-        }
-    }
-
-    &-outline-success {
-        --bs-btn-border-color: #36C9A7;
-        background-color: white;
-
-        &:hover {
-            border-color: unset !important;
-        }
-    }
-
-}
-
 .btn.disabled, .btn[disabled] {
     pointer-events: none;
     cursor: not-allowed;

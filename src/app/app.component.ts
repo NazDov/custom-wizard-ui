@@ -17,20 +17,21 @@ export class AppComponent {
   properties: WizardProperties = {
     steps: [
       {
-        id: 1,
         label: "1",
         content: "Step 1",
         next: 2,
       },
       {
-        id: 2,
         label: "2",
         content: "Step 2",
         next: 3
       },
       {
-        id: 3,
         label: "3",
+        content: "Step 3"
+      },
+      {
+        label: "4",
         content: "Step 3"
       }
     ]

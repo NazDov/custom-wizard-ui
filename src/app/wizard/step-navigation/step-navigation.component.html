@@ -1,1 +1,4 @@
-<p>step-navigation works!</p>
+<div class="d-flex justify-content-center align-items-center mt-2 gap-4 mt-2">
+    <button type="button" class="btn btn-success btn-lg" [disabled]="backBtnDisabled" (click)="goToPrevStep()">Back</button>
+    <button type="button" class="btn btn-success btn-lg" [disabled]="nextBtnDisabled" (click)="goToNextStep()">Next</button>
+</div>

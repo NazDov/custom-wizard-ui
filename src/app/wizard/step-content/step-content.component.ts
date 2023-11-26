@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WizardStep } from '../wizard-properties.model';
 
 @Component({
   selector: 'app-step-content',
@@ -10,6 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class StepContentComponent {
 
-  @Input() content?: string;
+  @Input() activeStep?: WizardStep;
 
 }

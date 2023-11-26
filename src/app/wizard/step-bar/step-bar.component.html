@@ -2,8 +2,8 @@
     <div class="stepbar">
         <div class="stepbar-row setup-panel">
             <div *ngFor="let step of steps; trackBy: getSteps" class="stepbar-step col-xs-3"> 
-                <div type="button" [ngClass]="activeStep === step.id ? 'btn-success' : 'btn-outline-success' " 
-                  class="btn btn-circle" [attr.disabled]="activeStep != step.id">
+                <div type="button" [ngClass]="activeStep === step ? 'btn-success' : 'btn-outline-success' " 
+                  class="btn btn-circle" [attr.disabled]="activeStep != step">
                     {{step.label}}
             </div>
         </div>

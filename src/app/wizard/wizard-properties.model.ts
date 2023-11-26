@@ -3,7 +3,6 @@ export interface WizardProperties {
 }
 
 export interface WizardStep {
-    id: number,
     label: String,
     content: String,
     next?: number

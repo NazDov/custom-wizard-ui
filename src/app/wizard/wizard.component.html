@@ -1,3 +1,15 @@
-<app-step-bar [steps]="properties!.steps" [activeStep]="1"></app-step-bar>
-<app-step-content [content]="content"></app-step-content>
-<app-step-navigation></app-step-navigation>
+<div class="container-fluid center">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-6">
+            <app-step-bar
+               [steps]="properties!.steps"
+               [activeStep]="activeStep">
+            </app-step-bar>
+            <app-step-content 
+               [activeStep]="activeStep">
+            </app-step-content>
+            <app-step-navigation [steps]="properties!.steps" 
+            (onActiveStepChange)="onActiveStepChange($event)"></app-step-navigation>
+        </div>
+    </div>
+</div>
